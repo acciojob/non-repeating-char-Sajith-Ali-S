@@ -1,22 +1,16 @@
-//your JS code here. If required.
 function f(str){
     let len = str.length;
-    let count =1;
-    let i =0;
-    let j =1;
-	while(i<len && j<len){
-        if(str.charAt(i)==str.charAt(j)){
-            j++
-            count++
+    for(let i =0; i< len; i++){
+        let currentCharacter = str.charAt(i);
+        let count =0;
+        for(let j =0; j<len;j++){
+            let strIterationCharacter = str.charAt(j);
+              if(currentCharacter==strIterationCharacter)count++;
         }
-        else{
-            if(count==1)return str.charAt(i)
-            i=j;
-            j= i+1;
-            count=1
-        }
+        if(count==1)return currentCharacter;
     }
-}
+    return null;
+    }
 
 var str = prompt();
 alert(f(str))
